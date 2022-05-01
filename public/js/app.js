@@ -6,7 +6,7 @@ function getLatency() {
             var ended = new Date().getTime();
             var milliseconds = ended - started;
             document.getElementById("latency").innerHTML = milliseconds + " ms";
-            document.getElementById("processingTime").innerHTML = response.headers.get("durationMS");
+            document.getElementById("processingTime").innerHTML = response.headers.get("durationMS").replace("ms", "") + " ms";
         }).catch(function (error) {
             //console.log(error);
             //clearInterval(timerLatency)
