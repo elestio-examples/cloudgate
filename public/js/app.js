@@ -5,33 +5,18 @@ function getLatency() {
         .then(function (response) {
             var ended = new Date().getTime();
             var milliseconds = ended - started;
-            document.getElementById("latencyAPI").innerHTML = milliseconds + " ms";
+            document.getElementById("latency").innerHTML = milliseconds + " ms";
             document.getElementById("processingTime").innerHTML = parseFloat(response.headers.get("durationMS").replace("ms", "")).toFixed(2) + " ms";
         }).catch(function (error) {
             //console.log(error);
             //clearInterval(timerLatency)
-            document.getElementById("latencyAPI").innerHTML = "? ms";
+            document.getElementById("latency").innerHTML = "? ms";
             document.getElementById("processingTime").innerHTML = "? ms";
         });
 
 }
 var timerLatency = window.setInterval(getLatency, 1000);
 
-
-function getLatencyStatic() {
-    var started = new Date().getTime();
-    var url = "/js/data.json?t=" + (+new Date());
-    fetch(url)
-        .then(function (response) {
-            var ended = new Date().getTime();
-            var milliseconds = ended - started;
-            document.getElementById("latencyStatic").innerHTML = milliseconds + " ms";
-        }).catch(function (error) {
-            document.getElementById("latencyStatic").innerHTML = "? ms";
-        });
-
-}
-var timerLatency = window.setInterval(getLatencyStatic, 1000);
 
 getVisitorInfos();
 async function getVisitorInfos() {
