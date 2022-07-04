@@ -6,6 +6,8 @@ config:
     runCommand: 'npm run start'
     buildCommand: 'npm run build'
     buildDir: '/'
+    icon: "public/cloudgate128.png"
+    screenshot: "public/images/screenshot-1.jpg"
 ports:
   - protocol: "HTTPS"
     targetProtocol: "HTTP"
@@ -20,3 +22,6 @@ ports:
 environments:
     -  key: 'ENV'
        value: 'production'
+webUI:
+  - url: "https://[CI_CD_DOMAIN]"
+    label: "Website"       
