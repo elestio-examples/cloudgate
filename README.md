@@ -8,6 +8,8 @@ Example application and CI/CD pipeline showing how to deploy a Cloudgate app on 
 
 # Once deployed
 
+You can check the deployed app at: https://[CI_CD_DOMAIN]/
+
 Changes some files in /public or /api then push your code to the Git repository
 
 # Documentation
